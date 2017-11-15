@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import Index from '@/components/Index'
+import IndexPanel from '../components/IndexPanel'
 
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  base: __dirname,
+  // mode: 'history',
+  // base: __dirname,
   routes: [
     {
       path: '/',
@@ -15,9 +15,9 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/api/index',
+      path: '/index',
       name: 'Index',
-      component: Index
+      component: IndexPanel
     },
     {
       path: '*',
@@ -25,3 +25,13 @@ export default new Router({
     }
   ]
 })
+
+// methods: {
+//   showServer: () => {
+//     this.$http.get('/api/hello').then((res) => {
+//       if (res.data.success) {
+//         this.msg = res.data
+//       }
+//     })
+//   }
+// }

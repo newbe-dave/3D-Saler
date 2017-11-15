@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ msg }}</h1>
-    <button @click=showServer>dian ji</button>
+    <button v-on:click='showServer'>dian ji</button>
   </div>
 </template>
 
@@ -15,10 +15,12 @@ export default {
   },
   methods: {
     showServer: () => {
-      this.$http.get('/api/hello').then((res)=>{
-				if (res.data.success) {
-					msg = 
-				}
+      alert('click')
+      this.$http.get('/api/hello/').then((res) => {
+        if (res.data.success) {
+          alert(res.data)
+          this.msg = res.data
+        }
       })
     }
   }
