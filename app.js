@@ -11,6 +11,7 @@ const app = new Koa();
 app.use(bodyParser);
 app.use(Json());
 app.use(Logger());
+app.use(server(path.resolve('dist')));
 
 app.use(async (ctx, next) => {
     let start = new Date;

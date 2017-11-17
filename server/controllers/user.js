@@ -1,8 +1,9 @@
 const getHello = async (ctx, next) => {
+  await next();
   ctx.response.type = 'text/html'
-  ctx.response.body = 'hello from server 2'
+  ctx.response.body = ctx.params.id
 }
 
 module.exports = (router) => {
-  router.get('/hello', getHello)
+  router.get('/hello/:id', getHello)
 }

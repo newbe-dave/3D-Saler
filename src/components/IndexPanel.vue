@@ -14,13 +14,11 @@ export default {
     }
   },
   methods: {
-    showServer: () => {
-      alert('click')
-      this.$http.get('/api/hello/').then((res) => {
-        if (res.data.success) {
-          alert(res.data)
-          this.msg = res.data
-        }
+    showServer: function () {
+      this.$http.get('/api/hello/id=123').then((res) => {
+        this.msg = res.data
+      }).catch((error) => {
+        alert(error)
       })
     }
   }
