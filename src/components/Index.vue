@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ msg }}</h1>
+    <h1>{{ title }}</h1>
     <button v-on:click='showServer'>dian ji</button>
   </div>
 </template>
@@ -10,7 +10,7 @@ export default {
   name: 'Index',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      title: 'Welcome to Your Vue.js App'
     }
   },
   methods: {
@@ -24,3 +24,8 @@ export default {
   }
 }
 </script>
+
+<style>
+
+</style>
+
