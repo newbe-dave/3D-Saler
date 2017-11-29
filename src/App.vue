@@ -8,7 +8,27 @@
         </div>
       </div> 
       <div class="container">
-        <router-view/>
+        <div class="logo-container">
+          <div class="">
+            <div class="layout-header">
+              <div class="layout-logo">
+                  <img src="./assets/cgTowerLogo.png"/>
+              </div>
+            </div>
+            <div style="height: 100%">
+              <div class="navigate">
+                <Tabs type="card">
+                    <Tab-pane label="模型下载">标签一的内容</Tab-pane>
+                    <Tab-pane label="精品推荐">标签二的内容</Tab-pane>
+                    <Tab-pane label="我的账户">标签三的内容</Tab-pane>
+                    <Tab-pane label="关于我们">标签三的内容</Tab-pane>
+                    <Tab-pane label="使用条款">标签三的内容</Tab-pane>
+                </Tabs>
+                <!-- <router-view/> -->
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="layout-copy">
         2017-2018 &copy; CGTower
@@ -18,6 +38,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'app'
 }
@@ -41,10 +62,10 @@ export default {
   }
   .layout-ceiling{
       background-image: url("./assets/headerBgImg.png");
-      padding: 10px 0;
+      padding: 6px 0;
       height: 31px;
       overflow: hidden;
-      margin-bottom: 0px
+      margin: 0 0 0 0
   }
   .layout-ceiling-main{
       float: right;
@@ -54,6 +75,58 @@ export default {
       color: #9ba7b5;
   }
   .container {
-    background-image: url("./assets/bodyBgImg.png");
+      background-image: url("./assets/bodyBgImg.png");
+  }
+  .logo-container {
+      height: 200px;
+      margin: 0 15% 0 300px;
+  }
+  .layout-logo{
+      width: 300px;
+      height: 50px;
+      border-radius: 3px;
+      float: left;
+      position: relative;
+      top: 15px;
+      left: 20px;
+  }
+  .navigate {
+      height: 100px;
+      background-image: url("./assets/naviBgImg.png");
+      background-size:1400px 1000px;
+      background-repeat: no-repeat;
+  }
+  .layout-header{
+      height: 80px;
+      box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  }
+  .layout-copy{
+      text-align: center;
+      /* padding: 10px 0 20px; */
+      color: #9ea7b4;
+  }
+
+  .navigate > .ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-nav {
+    width: 100%;
+    display: flex;
+  }
+
+  .navigate > .ivu-tabs-card > .ivu-tabs-content {
+      height: 120px;
+      margin-top: -16px;
+  }
+
+  .navigate > .ivu-tabs-card > .ivu-tabs-content > .ivu-tabs-tabpane {
+      background: #fff;
+      padding: 16px;
+  }
+
+  .navigate > .ivu-tabs.ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab {
+      border-color: transparent;
+      flex-grow: 1;
+  }
+
+  .navigate > .ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab-active {
+      border-color: #fff;
   }
 </style>
