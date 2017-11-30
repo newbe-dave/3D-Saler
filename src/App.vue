@@ -17,8 +17,8 @@
             </div>
             <div style="height: 100%">
               <div class="navigate">
-                <Tabs type="card">
-                    <Tab-pane label="模型下载">标签一的内容</Tab-pane>
+                <Tabs type="card"  :animated="false">
+                    <Tab-pane label="模型下载"><router-view/></Tab-pane>
                     <Tab-pane label="精品推荐">标签二的内容</Tab-pane>
                     <Tab-pane label="我的账户">标签三的内容</Tab-pane>
                     <Tab-pane label="关于我们">标签三的内容</Tab-pane>
@@ -26,25 +26,30 @@
                 </Tabs>
                 <!-- <router-view/> -->
               </div>
+              <div class="layout-copy">
+                2017-2018 &copy; CGTower
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="layout-copy">
-        2017-2018 &copy; CGTower
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'app'
 }
 </script>
 
 <style>
+  html {
+    height: 100%;
+  }
+  body {
+    height: 100%;
+  }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -69,16 +74,17 @@ export default {
   }
   .layout-ceiling-main{
       float: right;
-      margin-right: 15px;
+      margin-right: 300px;
   }
   .layout-ceiling-main a{
       color: #9ba7b5;
   }
   .container {
       background-image: url("./assets/bodyBgImg.png");
+      height: 100%;
   }
   .logo-container {
-      height: 200px;
+      height: 100%;
       margin: 0 15% 0 300px;
   }
   .layout-logo{
@@ -91,8 +97,7 @@ export default {
       left: 20px;
   }
   .navigate {
-      height: 100px;
-      background-image: url("./assets/naviBgImg.png");
+      height: 620px;
       background-size:1400px 1000px;
       background-repeat: no-repeat;
   }
@@ -106,27 +111,41 @@ export default {
       color: #9ea7b4;
   }
 
+  .navigate > .ivu-tabs-card {
+    height: 100%;
+  }
+
+  .navigate > .ivu-tabs-card > .ivu-tabs-bar {
+    border: none;
+  }
+
   .navigate > .ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-nav {
     width: 100%;
     display: flex;
   }
 
   .navigate > .ivu-tabs-card > .ivu-tabs-content {
-      height: 120px;
+      height: 100%;
       margin-top: -16px;
+      background: url("./assets/naviBgImg.png") no-repeat;
+      background-size:100%;
   }
 
   .navigate > .ivu-tabs-card > .ivu-tabs-content > .ivu-tabs-tabpane {
-      background: #fff;
+      /* background: url("./assets/naviBgImg.png") no-repeat;
+      background-size:100%; */
       padding: 16px;
   }
 
   .navigate > .ivu-tabs.ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab {
       border-color: transparent;
       flex-grow: 1;
+      background: url("./assets/tabBgImg.png") no-repeat;
+      background-size:100%;
   }
 
   .navigate > .ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab-active {
       border-color: #fff;
+      color: #FFF
   }
 </style>
