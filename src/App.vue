@@ -24,7 +24,6 @@
                     <Tab-pane label="关于我们">标签三的内容</Tab-pane>
                     <Tab-pane label="使用条款">标签三的内容</Tab-pane>
                 </Tabs>
-                <!-- <router-view/> -->
               </div>
               <div class="layout-copy">
                 2017-2018 &copy; CGTower
@@ -97,7 +96,7 @@ export default {
       left: 20px;
   }
   .navigate {
-      height: 620px;
+      height: 1350px;
       background-size:1400px 1000px;
       background-repeat: no-repeat;
   }

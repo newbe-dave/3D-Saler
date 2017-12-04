@@ -11,7 +11,11 @@
               <span>ID</span>
             </div>
             <div class="tab-download-ID-body">
-              <div>selector</div>
+              <div class="downloadSourceSelector">
+                <i-select :model.sync="selectedType">
+                  <i-option v-for= "item in downloadSources" :value="item.value">{{ item.label }}</i-option>
+                </i-select>
+              </div>
               <div>
                 <input type="text">
               </div>
@@ -21,11 +25,11 @@
             </div>  
           </div>
           <div class="tab-download-link">
-            <div class="tab-download-link-title">
+            <div class="tab-download-ID-title">
               <img src="../assets/refresh.png" alt="">
               <span>HtperLink</span>
             </div>
-            <div class="tab-download-link-body">
+            <div class="tab-download-ID-body">
               <div>
                 <input type="text">
               </div>
@@ -51,7 +55,20 @@ export default {
   name: 'Index',
   data () {
     return {
-      title: 'Welcome to Your Vue.js App'
+      selectedType: '',
+      downloadSources: [{
+        value: 'cgTower',
+        label: 'CG TOWER'
+      }, {
+        value: '3d66',
+        label: '3D66'
+      }, {
+        value: 'om',
+        label: 'OM'
+      }, {
+        value: 'justEasy',
+        label: 'Justeasy'
+      }]
     }
   },
   methods: {
@@ -71,15 +88,51 @@ export default {
       width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
     }
     .tab-logo-container {
       display: flex;
-      align-self: flex-start;
     }
-
     .tab-logo-container > span {
       align-items: center;
+    }
+    .tab-opt-container {
+      align-self: center;
+      width: 600px;
+    }
+    .tab-download-ID-title {
+      display: flex;
+      justify-content: flex-start;
+      margin-left: -16px;
+    }
+    .tab-download-ID-body {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .downloadSourceSelector {
+      width: 100px;
+      /* background: url("../assets/downloadTypeBgImg.png") no-repeat;
+      background-size: 100%; */
+    }
+
+    .downloadSourceSelector > .ivu-select.ivu-select-single.ivu-select-visible div {
+      width: 200px;
+    }
+
+    .downloadSourceSelector .ivu-select-dropdown {
+      background-color: none;
+    }
+
+    .downloadSourceSelector .ivu-select-dropdown > .ivu-select-dropdown-list li {
+      background: url("../assets/downloadTypeBgImg.png") no-repeat;
+      background-size: 100%;
+      /* color: #FFF; */
+    }
+
+    .downloadSourceSelector .ivu-select .ivu-select-selection {
+      background: url("../assets/downloadTypeBgImg.png") no-repeat;
+      background-size: 100%;
+      color: #000;
     }
 </style>
 
