@@ -2,13 +2,13 @@
     <div class="tab-container">
         <div class="tab-logo-container">
           <img src="../assets/logoSmall.png" alt="">
-          <span>welcome to CG Tower</span>
+          <span>欢迎来到CG TOWER模型素材下载！</span>
         </div>
         <div class="tab-opt-container">
           <div class="tab-download-ID">
             <div class="tab-download-ID-title">
               <img src="../assets/refresh.png" alt="">
-              <span>ID</span>
+              <span>模型素材ID：</span>
             </div>
             <div class="tab-download-ID-body">
               <div class="downloadSourceSelector">
@@ -20,31 +20,31 @@
                 <input class="id-input" type="text">
               </div>
               <div class="downloadBtn">
-                download
+                下载
               </div>
             </div>  
           </div>
-          <div class="tab-download-link">
+          <div class="tab-download-ID">
             <div class="tab-download-ID-title">
               <img src="../assets/refresh.png" alt="">
-              <span>HtperLink</span>
+              <span>模型下载链接：</span>
             </div>
             <div class="tab-download-ID-body">
-              <div>
-                <input type="text">
+              <div class="id-input-container">
+                <input class="id-input" type="text">
               </div>
             </div>
           </div>
-          <div>
-            <div>
-              <span>recomend</span>
+          <div class="recomendedGoods-container">
+            <div class="recomended-title">
+              <span>精品推荐：</span>
             </div>
-            <div>
+            <div class="goods-list-container">
               list
             </div>
           </div>
-          <div>
-            <p>blablablabla</p>
+          <div class="cg-instruction">
+            <p>本站是针对设计、建筑、艺术、软件行业的网络收藏网站，用户可以添加自己喜欢的CG网站博客、微博、空间的链接，通过审核就可以放在页面上，用户也可以评价本站服务。</p>
           </div>
         </div>
     </div>
@@ -88,16 +88,24 @@ export default {
       width: 100%;
       display: flex;
       flex-direction: column;
+      font-family: "宋体";
+      color: rgb(25, 105, 130);
+      size: 12px;
     }
     .tab-logo-container {
       display: flex;
     }
     .tab-logo-container > span {
       align-items: center;
+      height: 24px;
+      line-height: 24px;
     }
     .tab-opt-container {
       align-self: center;
-      width: 600px;
+      width: 900px;
+    }
+    .tab-download-ID {
+      margin-top: 50px;
     }
     .tab-download-ID-title {
       display: flex;
@@ -114,25 +122,49 @@ export default {
     }
     .id-input-container {
       flex-grow: 1;
-      height: 30px;
+      height: 26px;
+      margin: 0 2px;
     }
     .id-input {
-      background: url("../assets/downloadInputBgImg.png") no-repeat;
+      background: url("../assets/downloadInputBgImg.png");
       background-size: 100%;
       width: 100%;
-      height: 30px;
+      height: 26px;
       color: #FFF;
+      border: 0;
     }
     .downloadBtn {
-      /* flex-grow: 1; */
+      background: url("../assets/downloadBtnBgImg.png");
+      background-size: 100%;
+      width: 50px;
+      height: 26px;
+      line-height: 26px;
+      color: #FFF;
+    }
+    .recomendedGoods-container {
+      margin-top: 80px;
+    }
+    .recomended-title {
+      display: flex;
+      justify-content: flex-start;
+    }
+    .goods-list-container {
+      width: 100%;
+      height: 190px;
+      border: 1px solid #000;
+    }
+    .cg-instruction {
+      margin-top: 10px;
+      word-wrap:break-word;
     }
 </style>
 
 <style>
     .downloadSourceSelector .ivu-select-dropdown > .ivu-select-dropdown-list li {
-      background: url("../assets/downloadTypeBgImg.png") no-repeat;
+      background: url("../assets/downloadSourceBgImg.png");
       background-size: 100%;
       color: #FFF;
+      height: 26px;
     }
     .downloadSourceSelector > .ivu-select > .ivu-select-dropdown {
       padding: 0;
@@ -140,13 +172,19 @@ export default {
       border-radius: 0;
     }
     .downloadSourceSelector > .ivu-select > .ivu-select-selection {
-      background: url("../assets/downloadTypeBgImg.png") no-repeat;
+      background: url("../assets/downloadSourceBgImg.png");
       background-size: 100%;
       background-color: none;
       border-radius: 0;
       border:  none;
-      height: 30px;
+      height: 26px;
     }
+    .downloadSourceSelector > .ivu-select > .ivu-select-selection > .ivu-select-placeholder {
+      height: 26px;
+      line-height: 26px;
+      color: #FFF;
+    }
+
     .downloadSourceSelector > .ivu-select > .ivu-select-selection > .ivu-select-selected-value {
       color: #ffffff;
     }
