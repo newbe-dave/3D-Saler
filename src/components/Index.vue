@@ -16,10 +16,10 @@
                   <i-option v-for= "item in downloadSources" :value="item.value">{{ item.label }}</i-option>
                 </i-select>
               </div>
-              <div>
-                <input type="text">
+              <div class="id-input-container">
+                <input class="id-input" type="text">
               </div>
-              <div>
+              <div class="downloadBtn">
                 download
               </div>
             </div>  
@@ -108,31 +108,46 @@ export default {
       display: flex;
       flex-direction: row;
     }
-
     .downloadSourceSelector {
       width: 100px;
-      /* background: url("../assets/downloadTypeBgImg.png") no-repeat;
-      background-size: 100%; */
+      height: 30px;
     }
-
-    .downloadSourceSelector > .ivu-select.ivu-select-single.ivu-select-visible div {
-      width: 200px;
+    .id-input-container {
+      flex-grow: 1;
+      height: 30px;
     }
-
-    .downloadSourceSelector .ivu-select-dropdown {
-      background-color: none;
-    }
-
-    .downloadSourceSelector .ivu-select-dropdown > .ivu-select-dropdown-list li {
-      background: url("../assets/downloadTypeBgImg.png") no-repeat;
+    .id-input {
+      background: url("../assets/downloadInputBgImg.png") no-repeat;
       background-size: 100%;
-      /* color: #FFF; */
+      width: 100%;
+      height: 30px;
+      color: #FFF;
     }
-
-    .downloadSourceSelector .ivu-select .ivu-select-selection {
-      background: url("../assets/downloadTypeBgImg.png") no-repeat;
-      background-size: 100%;
-      color: #000;
+    .downloadBtn {
+      /* flex-grow: 1; */
     }
 </style>
 
+<style>
+    .downloadSourceSelector .ivu-select-dropdown > .ivu-select-dropdown-list li {
+      background: url("../assets/downloadTypeBgImg.png") no-repeat;
+      background-size: 100%;
+      color: #FFF;
+    }
+    .downloadSourceSelector > .ivu-select > .ivu-select-dropdown {
+      padding: 0;
+      margin: 0;
+      border-radius: 0;
+    }
+    .downloadSourceSelector > .ivu-select > .ivu-select-selection {
+      background: url("../assets/downloadTypeBgImg.png") no-repeat;
+      background-size: 100%;
+      background-color: none;
+      border-radius: 0;
+      border:  none;
+      height: 30px;
+    }
+    .downloadSourceSelector > .ivu-select > .ivu-select-selection > .ivu-select-selected-value {
+      color: #ffffff;
+    }
+</style>
