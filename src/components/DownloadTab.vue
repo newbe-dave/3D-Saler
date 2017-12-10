@@ -24,13 +24,13 @@
               </div>
             </div>  
           </div>
-          <div class="tab-download-ID">
+          <div class="tab-download-link">
             <div class="tab-download-ID-title">
               <img src="../assets/refresh.png" alt="">
               <span>模型下载链接：</span>
             </div>
             <div class="tab-download-ID-body">
-              <div class="id-input-container">
+              <div class="link-input-container">
                 <input class="id-input" type="text">
               </div>
             </div>
@@ -105,7 +105,11 @@ export default {
       width: 900px;
     }
     .tab-download-ID {
-      margin-top: 50px;
+      margin-top: 102px;
+      margin-bottom: 58px;
+    }
+    .tab-download-link {
+      margin-bottom: 58px;
     }
     .tab-download-ID-title {
       display: flex;
@@ -117,28 +121,32 @@ export default {
       flex-direction: row;
     }
     .downloadSourceSelector {
-      width: 100px;
+      width: 145px;
       height: 30px;
     }
     .id-input-container {
       flex-grow: 1;
-      height: 26px;
-      margin: 0 2px;
+      height: 35px;
+      margin: 0 8px;
+    }
+    .link-input-container {
+      flex-grow: 1;
+      height: 35px;
     }
     .id-input {
       background: url("../assets/downloadInputBgImg.png");
       background-size: 100%;
       width: 100%;
-      height: 26px;
+      height: 35px;
       color: #FFF;
       border: 0;
     }
     .downloadBtn {
       background: url("../assets/downloadBtnBgImg.png");
       background-size: 100%;
-      width: 50px;
-      height: 26px;
-      line-height: 26px;
+      width: 145px;
+      height: 35px;
+      line-height: 35px;
       color: #FFF;
     }
     .recomendedGoods-container {
@@ -150,7 +158,7 @@ export default {
     }
     .goods-list-container {
       width: 100%;
-      height: 190px;
+      height: 324px;
       border: 1px solid #000;
     }
     .cg-instruction {
@@ -177,11 +185,11 @@ export default {
       background-color: none;
       border-radius: 0;
       border:  none;
-      height: 26px;
+      height: 35px;
     }
     .downloadSourceSelector > .ivu-select > .ivu-select-selection > .ivu-select-placeholder {
-      height: 26px;
-      line-height: 26px;
+      height: 35px;
+      line-height: 35px;
       color: #FFF;
     }
 

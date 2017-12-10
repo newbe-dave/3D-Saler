@@ -81,10 +81,11 @@ export default {
   .container {
       background-image: url("./assets/bodyBgImg.png");
       height: 100%;
+      overflow:scroll;
   }
   .logo-container {
       height: 100%;
-      margin: 0 15% 0 300px;
+      width: 1350px;
   }
   .layout-logo{
       width: 300px;
@@ -96,9 +97,7 @@ export default {
       left: 20px;
   }
   .navigate {
-      height: 1350px;
-      background-size:1400px 1000px;
-      background-repeat: no-repeat;
+      height: 800px;
   }
   .layout-header{
       height: 80px;
@@ -131,8 +130,6 @@ export default {
   }
 
   .navigate > .ivu-tabs-card > .ivu-tabs-content > .ivu-tabs-tabpane {
-      /* background: url("./assets/naviBgImg.png") no-repeat;
-      background-size:100%; */
       padding: 16px;
   }
 
