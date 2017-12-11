@@ -18,8 +18,8 @@
             <div style="height: 100%">
               <div class="navigate">
                 <Tabs type="card"  :animated="false">
-                    <Tab-pane label="模型下载"><router-view/></Tab-pane>
-                    <Tab-pane label="精品推荐">标签二的内容</Tab-pane>
+                    <Tab-pane label="模型下载"><my-download/></Tab-pane>
+                    <Tab-pane label="精品推荐"><router-view/></Tab-pane>
                     <Tab-pane label="我的账户">标签三的内容</Tab-pane>
                     <Tab-pane label="关于我们">标签三的内容</Tab-pane>
                     <Tab-pane label="使用条款">标签三的内容</Tab-pane>

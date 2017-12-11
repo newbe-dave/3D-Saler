@@ -9,6 +9,7 @@ import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 
 Vue.use(iView)
+Vue.component('my-download', DownloadTab)
 
 Vue.config.productionTip = false
 Vue.prototype.$http = Axios
@@ -18,6 +19,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App,
-    'my-download': DownloadTab }
+  components: { App }
 })
