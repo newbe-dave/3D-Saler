@@ -1,9 +1,6 @@
 <template>
     <div class="tab-container">
-        <div class="tab-logo-container">
-          <img src="../assets/logoSmall.png" alt="">
-          <span>欢迎来到CG TOWER模型素材下载！</span>
-        </div>
+        <my-logo/>
         <div class="tab-opt-container">
           <div class="tab-download-ID">
             <div class="tab-download-ID-title">
@@ -105,7 +102,7 @@ export default {
       width: 900px;
     }
     .tab-download-ID {
-      margin-top: 102px;
+      margin-top: 30px;
       margin-bottom: 58px;
     }
     .tab-download-link {

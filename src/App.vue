@@ -20,7 +20,7 @@
                 <Tabs type="card"  :animated="false">
                     <Tab-pane label="模型下载"><my-download/></Tab-pane>
                     <Tab-pane label="精品推荐"><router-view/></Tab-pane>
-                    <Tab-pane label="我的账户">标签三的内容</Tab-pane>
+                    <Tab-pane label="我的账户"><my-account/></Tab-pane>
                     <Tab-pane label="关于我们">标签三的内容</Tab-pane>
                     <Tab-pane label="使用条款">标签三的内容</Tab-pane>
                 </Tabs>
@@ -42,26 +42,12 @@ export default {
 }
 </script>
 
-<style>
-  html {
-    height: 100%;
-  }
-  body {
-    height: 100%;
-  }
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    height: 100%;
-  }
+<style scoped>
   .layout{
       border: 1px solid #d7dde4;
       position: relative;
       border-radius: 4px;
-      overflow: hidden;
+      /* overflow: hidden; */
       height: 100%;
   }
   .layout-ceiling{
@@ -82,6 +68,8 @@ export default {
       background-image: url("./assets/bodyBgImg.png");
       height: 100%;
       overflow:scroll;
+      display: flex;
+      justify-content: center;
   }
   .logo-container {
       height: 100%;
@@ -108,7 +96,24 @@ export default {
       /* padding: 10px 0 20px; */
       color: #9ea7b4;
   }
+</style>
 
+
+<style>
+  html {
+    height: 100%;
+  }
+  body {
+    height: 100%;
+  }
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    height: 100%;
+  }
   .navigate > .ivu-tabs-card {
     height: 100%;
   }
