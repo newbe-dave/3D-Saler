@@ -5,6 +5,7 @@ import App from './App'
 import TabLogo from './components/TabLogo.vue'
 import DownloadTab from './components/DownloadTab.vue'
 import AccountTab from './components/AccountTab.vue'
+import AboutUsTab from './components/AboutUs.vue'
 import router from './router'
 import Axios from 'axios'
 import iView from 'iview'
@@ -14,6 +15,7 @@ Vue.use(iView)
 Vue.component('my-logo', TabLogo)
 Vue.component('my-download', DownloadTab)
 Vue.component('my-account', AccountTab)
+Vue.component('my-aboutus', AboutUsTab)
 
 Vue.config.productionTip = false
 Vue.prototype.$http = Axios

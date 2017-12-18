@@ -20,8 +20,11 @@
                 <Tabs type="card"  :animated="false">
                     <Tab-pane label="模型下载"><my-download/></Tab-pane>
                     <Tab-pane label="精品推荐"><router-view/></Tab-pane>
+                    <Tab-pane label="高清贴图"><router-view/></Tab-pane>
+                    <Tab-pane label="教程学习">标签三的内容</Tab-pane>
+                    <Tab-pane label="软件下载">标签三的内容</Tab-pane>
                     <Tab-pane label="我的账户"><my-account/></Tab-pane>
-                    <Tab-pane label="关于我们">标签三的内容</Tab-pane>
+                    <Tab-pane label="关于我们"><my-aboutus/></Tab-pane>
                     <Tab-pane label="使用条款">标签三的内容</Tab-pane>
                 </Tabs>
               </div>
@@ -47,7 +50,7 @@ export default {
       border: 1px solid #d7dde4;
       position: relative;
       border-radius: 4px;
-      /* overflow: hidden; */
+      overflow: hidden;
       height: 100%;
   }
   .layout-ceiling{
