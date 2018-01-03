@@ -61,7 +61,7 @@
             <img src="../assets/hori-line.png" alt="">
           </div>
         </div>
-        <div class="info-type-container">
+        <!-- <div class="info-type-container">
           <div class="info-type">
             <span>基础信息</span>
           </div>
@@ -74,12 +74,12 @@
           <div class="info-type">
             <span>收藏记录</span>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="mid-line">
         <img src="../assets/ver-line.png"/>
       </div>
-      <div class="accountInfo">3</div>
+      <div class="accountInfo"><my-infos/></div>
     </div>
   </div>
 </template>
@@ -127,7 +127,6 @@ export default {
     height: 26px;;
   }
   .change-button {
-    /* display: flex; */
     flex-basis: 60px;
     width: 60px;
     height: 26px;
@@ -141,6 +140,7 @@ export default {
   }
   .accountInfo {
     flex: auto;
+    margin-top: 32px;
   }
   .info-type-container {
     display: flex;

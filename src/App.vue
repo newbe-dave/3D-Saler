@@ -25,7 +25,7 @@
                     <Tab-pane label="软件下载">标签三的内容</Tab-pane>
                     <Tab-pane label="我的账户"><my-account/></Tab-pane>
                     <Tab-pane label="关于我们"><my-aboutus/></Tab-pane>
-                    <Tab-pane label="使用条款">标签三的内容</Tab-pane>
+                    <Tab-pane label="使用条款"><my-terms/></Tab-pane>
                 </Tabs>
               </div>
               <div class="layout-copy">
@@ -89,6 +89,7 @@ export default {
   }
   .navigate {
       height: 800px;
+      position: relative;
   }
   .layout-header{
       height: 80px;
