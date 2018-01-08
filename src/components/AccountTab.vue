@@ -141,6 +141,7 @@ export default {
   .accountInfo {
     flex: auto;
     margin-top: 32px;
+    margin-right: 139px;
   }
   .info-type-container {
     display: flex;

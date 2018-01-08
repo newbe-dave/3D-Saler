@@ -10,6 +10,8 @@ import TermsTab from './components/Terms.vue'
 import InfosInAccountTab from './components/InfosInAccount.vue'
 import userInfoTab from './components/UserInfoOfInfos.vue'
 import RechargeCenterTab from './components/RechargeCenterOfInfos.vue'
+import DownloadRecTab from './components/DownloadRecord.vue'
+import FavouriteRecTab from './components/FavouriteRecord.vue'
 import router from './router'
 import Axios from 'axios'
 import iView from 'iview'
@@ -24,6 +26,8 @@ Vue.component('my-terms', TermsTab)
 Vue.component('my-infos', InfosInAccountTab)
 Vue.component('my-user', userInfoTab)
 Vue.component('my-recharge', RechargeCenterTab)
+Vue.component('my-downloadRec', DownloadRecTab)
+Vue.component('my-favouriteRec', FavouriteRecTab)
 
 Vue.config.productionTip = false
 Vue.prototype.$http = Axios

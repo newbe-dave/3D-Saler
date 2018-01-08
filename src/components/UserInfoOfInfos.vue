@@ -1,8 +1,5 @@
 <template>
   <div class="user-info-container">
-      <div class="info-button">
-          <span>基础信息</span>
-      </div>
       <div class="info-user">
           <div class="info-user-line">
               <div class="info-user-line-word">
