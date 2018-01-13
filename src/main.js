@@ -12,14 +12,17 @@ import userInfoTab from './components/UserInfoOfInfos.vue'
 import RechargeCenterTab from './components/RechargeCenterOfInfos.vue'
 import DownloadRecTab from './components/DownloadRecord.vue'
 import FavouriteRecTab from './components/FavouriteRecord.vue'
+import RecomendedTab from './components/RecomendedTab.vue'
 import router from './router'
 import Axios from 'axios'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 
 Vue.use(iView)
+// Vue.component('CGTable', CGTable)
 Vue.component('my-logo', TabLogo)
 Vue.component('my-download', DownloadTab)
+Vue.component('my-recomend', RecomendedTab)
 Vue.component('my-account', AccountTab)
 Vue.component('my-aboutus', AboutUsTab)
 Vue.component('my-terms', TermsTab)

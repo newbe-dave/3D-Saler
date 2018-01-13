@@ -10,7 +10,7 @@
             <div class="tab-download-ID-body">
               <div class="downloadSourceSelector">
                 <i-select :model.sync="selectedType">
-                  <i-option v-for= "item in downloadSources" :value="item.value">{{ item.label }}</i-option>
+                  <i-option v-for= "item in downloadSources" :value="item.value" :key="item.value">{{ item.label }}</i-option>
                 </i-select>
               </div>
               <div class="id-input-container">
