@@ -8,7 +8,7 @@
 <style scoped>
     .tab-logo-container {
       display: flex;
-      margin: 70px 0 0 100px;
+      margin: 50px 0 0 100px;
       font-family: "宋体";
       color: rgb(25, 105, 130);
       size: 12px;

@@ -13,6 +13,7 @@ import RechargeCenterTab from './components/RechargeCenterOfInfos.vue'
 import DownloadRecTab from './components/DownloadRecord.vue'
 import FavouriteRecTab from './components/FavouriteRecord.vue'
 import RecomendedTab from './components/RecomendedTab.vue'
+import ResourceDisplayContainer from './components/ResourceDisplayContainer.vue'
 import router from './router'
 import Axios from 'axios'
 import iView from 'iview'
@@ -31,6 +32,7 @@ Vue.component('my-user', userInfoTab)
 Vue.component('my-recharge', RechargeCenterTab)
 Vue.component('my-downloadRec', DownloadRecTab)
 Vue.component('my-favouriteRec', FavouriteRecTab)
+Vue.component('my-resourceCntr', ResourceDisplayContainer)
 
 Vue.config.productionTip = false
 Vue.prototype.$http = Axios

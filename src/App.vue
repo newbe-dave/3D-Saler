@@ -20,7 +20,7 @@
                 <Tabs type="card"  :animated="false">
                     <Tab-pane label="模型下载"><my-download/></Tab-pane>
                     <Tab-pane label="精品推荐"><my-recomend/></Tab-pane>
-                    <Tab-pane label="高清贴图"></></Tab-pane>
+                    <Tab-pane label="高清贴图"><my-resourceCntr/></Tab-pane>
                     <Tab-pane label="教程学习">标签三的内容</Tab-pane>
                     <Tab-pane label="软件下载">标签三的内容</Tab-pane>
                     <Tab-pane label="我的账户"><my-account/></Tab-pane>
