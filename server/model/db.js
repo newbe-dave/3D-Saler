@@ -1,7 +1,8 @@
 var Sequelize = require("sequelize");
+var dbconfig = require("./config/localdb.js");
 
-var seq = new Sequelize('tms3db', 'tms3owner', 'tms3owner', {
-    host: 'spsdemo-w7',
+var seq = new Sequelize(dbconfig.database, dbconfig.user, dbconfig.pwd, {
+    host: dbconfig.host,
     dialect: 'mysql',
     pool: {
         max: 20,
@@ -20,6 +21,3 @@ seq
     });
 
 
-seq.query("select * from SPS_CHARGE_DETAIL d, sps_charge_sum sa , sps_order o where sa.order_id = o.order_id and o.no = '99920008529' and d.CHARGE_SUM_ID = sa.CHARGE_SUM_ID", {plain: true}).then(projects => {
-    console.log(projects);
-});
