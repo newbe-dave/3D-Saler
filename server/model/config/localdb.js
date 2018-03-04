@@ -1,7 +1,7 @@
 var config = {
     database: 'cgtowerdb',
     user: 'root',
-    pwd: 'root',
+    pwd: '',
     host: 'localhost'
 };
 

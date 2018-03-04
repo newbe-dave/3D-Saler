@@ -1,3 +1,10 @@
 const DB = require('./db');
-const Sequelize = require("sequelize");
-const User = Sequelize.import('./User');
+const sequelize = require("sequelize");
+
+const User = DB.import('./User');
+
+User.sync({force:true});
+
+module.exports = {
+    User: User
+}

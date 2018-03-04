@@ -10,11 +10,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         userPwd: {
-            type: Datatypes.STRING(64),
+            type: DataTypes.STRING(64),
             allowNull: false
         },
         userEmail: DataTypes.STRING(64),
-        userPhone: Datatypes.STRING(20)
+        userPhone: DataTypes.STRING(20)
     }, {
         freezeTableName: true,
         tableName: 'user',

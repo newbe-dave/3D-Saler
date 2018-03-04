@@ -25,8 +25,13 @@ app.on("error", function(err, ctx) {
 });
 
 const allRoutes = require("./server/routes/routes");
+const hello = require("./server/controllers/user");
 
-app.use(allRoutes.routes())
+hello(router);
+
+router.use("/api", router.routes(), router.allowedMethods());
+// app.use(allRoutes.routes())
+app.use(router.routes())
 
 app.listen(8889, () => {
     console.log("Koa2 is listening in 8889");
