@@ -1,23 +1,26 @@
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define('user', {
+    return sequelize.define('goods', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        userName: {
-            type: DataTypes.STRING(64),
+        goodsId: {
+            type: DataTypes.INTEGER,
             allowNull: false
         },
-        userPwd: {
+        goodsName: {
             type: Datatypes.STRING(64),
             allowNull: false
         },
-        userEmail: DataTypes.STRING(64),
-        userPhone: Datatypes.STRING(20)
+        goodsDescription: DataTypes.STRING(200),
+        goodsUnitPirce: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
     }, {
         freezeTableName: true,
-        tableName: 'user',
-        comment: '用户表'
+        tableName: 'goods',
+        comment: '商品表'
     });
 }

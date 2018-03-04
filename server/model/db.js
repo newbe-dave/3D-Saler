@@ -1,7 +1,7 @@
 var Sequelize = require("sequelize");
 var dbconfig = require("./config/localdb.js");
 
-var seq = new Sequelize(dbconfig.database, dbconfig.user, dbconfig.pwd, {
+var db = new Sequelize(dbconfig.database, dbconfig.user, dbconfig.pwd, {
     host: dbconfig.host,
     dialect: 'mysql',
     pool: {
@@ -11,13 +11,15 @@ var seq = new Sequelize(dbconfig.database, dbconfig.user, dbconfig.pwd, {
     }
 });
 
-seq
-    .authenticate()
-    .then(() => {
-        console.log('Connection has been established successfully.');
-    })
-    .catch(err => {
-        console.error('Unable to connect to the database:', err);
-    });
+module.exports = db;
+
+// db
+//     .authenticate()
+//     .then(() => {
+//         console.log('Connection has been established successfully.');
+//     })
+//     .catch(err => {
+//         console.error('Unable to connect to the database:', err);
+//     });
 
 
