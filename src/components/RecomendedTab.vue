@@ -29,19 +29,7 @@
         <div class="carouses-container">
           <Carousel v-model="value1">
             <CarouselItem>
-              <div class="goods-list-carouse">
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-              </div>
-            </CarouselItem><CarouselItem>
+              {{test()}}
               <div class="goods-list-carouse">
                 <my-resourceCntr/>
                 <my-resourceCntr/>
