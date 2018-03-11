@@ -28,21 +28,13 @@
         </div>
         <div class="carouses-container">
           <Carousel v-model="value1">
-            <CarouselItem>
-              {{test()}}
-              <div class="goods-list-carouse">
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-                <my-resourceCntr/>
-              </div>
-            </CarouselItem>
+            <template v-for="items in list">
+              <CarouselItem>
+                <div class="goods-list-carouse">
+                  <my-resourceCntr v-for="item in items"/>
+                </div>
+              </CarouselItem>
+            </template>
           </Carousel>
         </div>
         <!-- <div style="margin: 10px;overflow: hidden">
@@ -63,8 +55,12 @@ export default {
       tabPosition: 1,
       allTabs: 9,
       tabsToShow: 9,
-      value1: 0
+      value1: 0,
+      list: []
     };
+  },
+  mounted() {
+    this.list.push([1,2]);
   },
   computed: {
     tabPage() {
