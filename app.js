@@ -1,5 +1,4 @@
 const Koa = require("koa2");
-const router = require("koa-router")();
 const Json = require("koa-json");
 const Logger = require("koa-logger");
 const bodyParser = require("koa-bodyparser")();
@@ -25,13 +24,7 @@ app.on("error", function(err, ctx) {
 });
 
 const allRoutes = require("./server/routes/routes");
-const hello = require("./server/controllers/user");
-
-hello(router);
-
-router.use("/api", router.routes(), router.allowedMethods());
-// app.use(allRoutes.routes())
-app.use(router.routes())
+app.use(allRoutes.routes())
 
 app.listen(8889, () => {
     console.log("Koa2 is listening in 8889");
