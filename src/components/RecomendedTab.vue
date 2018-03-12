@@ -28,7 +28,7 @@
         </div>
         <div class="carouses-container">
           <Carousel v-model="value1">
-            <template v-for="items in list">
+            <template v-for="items in goodsList">
               <CarouselItem>
                 <div class="goods-list-carouse">
                   <my-resourceCntr v-for="item in items"/>
@@ -47,6 +47,11 @@
 </template>
 
 <script>
+const goodsType = {
+  1: "sha fa",
+  2: 'chu ju'
+};
+
 export default {
   data() {
     return {
@@ -56,11 +61,36 @@ export default {
       allTabs: 9,
       tabsToShow: 9,
       value1: 0,
-      list: []
+      goodsList: []
     };
   },
+  methods: {
+    changeTab(pos) {
+      if (pos === this.currentTab) {
+        return;
+      } else if (pos === this.allTabs) {
+        this.currentTab = pos;
+      } else {
+        this.currentTab = pos;
+        this.tabPosition = this.currentTab;
+      }
+    },
+    searchGoods(type) {
+      this.$http("/api/searchRecomendedGoods/" + type).then(response => {
+        let tmp = _.groupBy(response.data, (key, value) => {
+          return Math.floor(key / 8);
+        });
+
+        _.reduce(tmp, (result, value, key) => {
+          return result.push(value);
+        }, this.goodsList);
+      }).catch(err => {
+        alert("call: " + err);
+      });
+    }
+  },
   mounted() {
-    this.list.push([1,2]);
+    this.searchGoods(goodsType[this.currentTab] || "sha fa");
   },
   computed: {
     tabPage() {
@@ -76,16 +106,10 @@ export default {
       return tabPage;
     }
   },
-  methods: {
-    changeTab(pos) {
-      if (pos === this.currentTab) {
-        return;
-      } else if (pos === this.allTabs) {
-        this.currentTab = pos;
-      } else {
-        this.currentTab = pos;
-        this.tabPosition = this.currentTab;
-      }
+  watch: {
+    currentTab: function(val) {
+      var type = goodsType[val];
+      this.searchGoods(type);
     }
   }
 };

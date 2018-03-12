@@ -1,6 +1,7 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import _ from 'lodash'
 import App from './App'
 import TabLogo from './components/TabLogo.vue'
 import DownloadTab from './components/DownloadTab.vue'
