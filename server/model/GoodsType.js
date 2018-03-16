@@ -8,6 +8,10 @@ module.exports = (sequelize, DataTypes) => {
         typeName: {
             type: DataTypes.STRING(64),
             allowNull: false
+        },
+        typeDescription: {
+            type: DataTypes.STRING(64),
+            allowNull: true
         }
     }, {
         freezeTableName: true,
