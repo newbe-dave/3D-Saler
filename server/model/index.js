@@ -23,6 +23,11 @@ DB.sync({force: true}).then(initDB).catch(err => {
 // DB.sync();
 
 function initDB() {
+    UserRole.create({roleName: "normal"}).then(role => {
+        User.create({userName: "gxd", userPwd: "888888", userRoleId: role.id}).catch(err => {
+            console.log("create user failed: " + err);
+        })
+    })
     GoodsType.create({typeName: "sha fa"}).then(type => {
         var id = type.id;
         Goods.create({goodsId: 123, goodsName: 'sha fa 1 hao', goodsUnitPirce: 10, goodsTypeId: id}).then(task => {});
