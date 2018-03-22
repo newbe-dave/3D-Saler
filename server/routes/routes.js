@@ -1,9 +1,9 @@
 const Router = require("koa-router");
-const hello = require("../controllers/user.controller");
+const user = require("../controllers/user.controller");
 const searchGoods = require('../controllers/goods.search.controller.js');
 
 let routes = new Router();
-hello(routes);
+user(routes);
 searchGoods(routes)
 
 let apiRouter = new Router();

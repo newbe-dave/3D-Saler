@@ -20,6 +20,7 @@
     "iview": "^2.7.3",
     "koa-bodyparser": "^4.2.0",
     "koa-json": "^2.0.2",
+    "koa-jwt": "^3.3.1",
     "koa-logger": "^3.1.0",
     "koa-router": "^7.2.1",
     "koa-static": "^4.0.1",

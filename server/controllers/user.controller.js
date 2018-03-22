@@ -1,14 +1,12 @@
-const models = require('../model');
+const userService = require('../service/user.search.service');
 
-const getHello = async (ctx, next) => {
+const getUserByName = async (ctx, next) => {
   ctx.response.type = 'text/html'
-  ctx.response.body += ctx.params.id + '@@';
-  await models.User.create({userName: ctx.params.id, userPwd: 'admin'}).then(user => {
-    ctx.response.body += user.id;
-  });
+  const user = await userService.getUserByName(ctx.params.name);
+  ctx.response.body = user;
   await next();
 }
 
 module.exports = (router) => {
-  router.get('/hello/:id', getHello)
+  router.get('/user/get/:name', getUserByName)
 }
