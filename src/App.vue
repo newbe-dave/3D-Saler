@@ -41,7 +41,27 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  methods: {
+    login() {
+      let request = {
+        name: "admin",
+        password: "admin"
+      };
+
+      this.$http.post("/auth/user", request)
+      .then((res) => {
+        if (res.data.success) {
+          sessionStorage.setItem();
+        } else {
+
+        }
+      })
+      .catch(err => {
+        
+      });
+    }
+  }
 }
 </script>
 
