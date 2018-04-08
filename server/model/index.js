@@ -24,7 +24,7 @@ DB.sync({force: true}).then(initDB).catch(err => {
 
 function initDB() {
     UserRole.create({roleName: "normal"}).then(role => {
-        User.create({userName: "gxd", userPwd: "888888", userRoleId: role.id}).catch(err => {
+        User.create({userName: "gxd", userPwd: "$2a$10$T0o.elbaMMHPbQYd5OBcWebDpstw/Usd8qeJtLqXu8pYOM7r92jyG", userRoleId: role.id}).catch(err => {
             console.log("create user failed: " + err);
         })
     })

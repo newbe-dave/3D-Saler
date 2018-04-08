@@ -87,6 +87,9 @@ export default {
       }).catch(err => {
         alert("call: " + err);
       });
+      this.$http.get('auth/user/get/gxd').then(res => {
+        console.log(res);
+      });
     }
   },
   mounted() {

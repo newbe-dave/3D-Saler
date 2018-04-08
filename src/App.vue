@@ -3,7 +3,7 @@
     <div class="layout">
       <div class="layout-ceiling">
         <div class="layout-ceiling-main">
-          <a href="#">登录</a> |
+          <a href="#" @click="login">登录</a> |
           <a href="#">注册</a> |
         </div>
       </div> 
@@ -44,21 +44,32 @@ export default {
   name: 'app',
   methods: {
     login() {
+      if (sessionStorage.getItem('cg-token')) {
+        return;
+      }
       let request = {
-        name: "admin",
-        password: "admin"
+        name: "gxd",
+        password: "888888"
       };
 
       this.$http.post("/auth/user", request)
-      .then((res) => {
+      .then(function(res) {
         if (res.data.success) {
-          sessionStorage.setItem();
+          sessionStorage.setItem('cg-token', res.data.token);
+          this.$http.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.token
+          this.$message({
+            type: 'success',
+            message: "login successfully"
+          });
         } else {
-
+          this.$message.error(res.data.info);
+          sessionStorage.setItem('cg-token', null);
         }
       })
-      .catch(err => {
-        
+      .catch(function(err) {
+        console.log(err);
+        this.$message.error('request error');
+        sessionStorage.setItem('cg-token', null);
       });
     }
   }

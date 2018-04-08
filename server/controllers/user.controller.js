@@ -1,5 +1,5 @@
 const userService = require('../service/user.search.service');
-const jwt = require('koa-jwt');
+const jwt = require('jsonwebtoken');
 const bcryptjs = require('bcryptjs'); 
 
 const getUserByName = async (ctx, next) => {
@@ -10,11 +10,11 @@ const getUserByName = async (ctx, next) => {
 }
 
 const postUserAuth = async (ctx, next) => {
-  const data = ctx.params;
+  const data = ctx.request.body;
   const userInfo = await userService.getUserByName(data.name);
 
   if (userInfo != null) {
-    if (!bcrypt.compareSync(data.password, userInfo.userPwd)) {
+    if (!bcryptjs.compareSync(data.password, userInfo.userPwd)) {
     // if (userInfo.userPwd != data.password) {
       ctx.response.body = {
         success: false,

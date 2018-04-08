@@ -19,6 +19,7 @@
     "bcryptjs": "^2.4.3",
     "compression-webpack-plugin": "^1.1.10",
     "iview": "^2.7.3",
+    "jsonwebtoken": "^8.2.1",
     "koa-bodyparser": "^4.2.0",
     "koa-json": "^2.0.2",
     "koa-jwt": "^3.3.1",
