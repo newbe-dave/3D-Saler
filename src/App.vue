@@ -41,147 +41,150 @@
 
 <script>
 export default {
-  name: 'app',
+  name: "app",
   methods: {
     login() {
-      if (sessionStorage.getItem('cg-token')) {
-        return;
-      }
       let request = {
         name: "gxd",
         password: "888888"
       };
 
-      this.$http.post("/auth/user", request)
-      .then(function(res) {
-        if (res.data.success) {
-          sessionStorage.setItem('cg-token', res.data.token);
-          this.$http.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.token
-          this.$message({
-            type: 'success',
-            message: "login successfully"
-          });
-        } else {
-          this.$message.error(res.data.info);
-          sessionStorage.setItem('cg-token', null);
-        }
-      })
-      .catch(function(err) {
-        console.log(err);
-        this.$message.error('request error');
-        sessionStorage.setItem('cg-token', null);
-      });
+      this.$http
+        .post("/auth/user", request)
+        .then((res) => {
+          if (res.data.success) {
+            console.log("aaa");
+            sessionStorage.setItem("cg-token", res.data.token);
+            console.log(this);
+            this.$http.defaults.headers.common["Authorization"] =
+              "Bearer " + res.data.token;
+              console.log("bbb");
+            // this.$Message.message({
+            //   type: "success",
+            //   message: "login successfully"
+            // });
+            this.$Message.info("login successfully");
+          } else {
+            this.$Message.error(res.data.info);
+            sessionStorage.setItem("cg-token", null);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          this.$Message.error("request error");
+          sessionStorage.setItem("cg-token", null);
+        });
     }
   }
-}
+};
 </script>
 
 <style scoped>
-  .layout{
-      border: 1px solid #d7dde4;
-      position: relative;
-      border-radius: 4px;
-      overflow: hidden;
-      height: 100%;
-  }
-  .layout-ceiling{
-      background-image: url("./assets/headerBgImg.png");
-      padding: 6px 0;
-      height: 31px;
-      overflow: hidden;
-      margin: 0 0 0 0
-  }
-  .layout-ceiling-main{
-      float: right;
-      margin-right: 300px;
-  }
-  .layout-ceiling-main a{
-      color: #9ba7b5;
-  }
-  .container {
-      background-image: url("./assets/bodyBgImg.png");
-      height: 100%;
-      overflow:scroll;
-      display: flex;
-      justify-content: center;
-  }
-  .logo-container {
-      height: 100%;
-      width: 1350px;
-  }
-  .layout-logo{
-      width: 300px;
-      height: 50px;
-      border-radius: 3px;
-      float: left;
-      position: relative;
-      top: 15px;
-      left: 20px;
-  }
-  .navigate {
-      height: 800px;
-      position: relative;
-  }
-  .layout-header{
-      height: 80px;
-      box-shadow: 0 1px 1px rgba(0,0,0,.1);
-  }
-  .layout-copy{
-      text-align: center;
-      /* padding: 10px 0 20px; */
-      color: #9ea7b4;
-  }
+.layout {
+  border: 1px solid #d7dde4;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 100%;
+}
+.layout-ceiling {
+  background-image: url("./assets/headerBgImg.png");
+  padding: 6px 0;
+  height: 31px;
+  overflow: hidden;
+  margin: 0 0 0 0;
+}
+.layout-ceiling-main {
+  float: right;
+  margin-right: 300px;
+}
+.layout-ceiling-main a {
+  color: #9ba7b5;
+}
+.container {
+  background-image: url("./assets/bodyBgImg.png");
+  height: 100%;
+  overflow: scroll;
+  display: flex;
+  justify-content: center;
+}
+.logo-container {
+  height: 100%;
+  width: 1350px;
+}
+.layout-logo {
+  width: 300px;
+  height: 50px;
+  border-radius: 3px;
+  float: left;
+  position: relative;
+  top: 15px;
+  left: 20px;
+}
+.navigate {
+  height: 800px;
+  position: relative;
+}
+.layout-header {
+  height: 80px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.layout-copy {
+  text-align: center;
+  /* padding: 10px 0 20px; */
+  color: #9ea7b4;
+}
 </style>
 
 
 <style>
-  html {
-    height: 100%;
-  }
-  body {
-    height: 100%;
-  }
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    height: 100%;
-  }
-  .navigate > .ivu-tabs-card {
-    height: 100%;
-  }
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  height: 100%;
+}
+.navigate > .ivu-tabs-card {
+  height: 100%;
+}
 
-  .navigate > .ivu-tabs-card > .ivu-tabs-bar {
-    border: none;
-  }
+.navigate > .ivu-tabs-card > .ivu-tabs-bar {
+  border: none;
+}
 
-  .navigate > .ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-nav {
-    width: 100%;
-    display: flex;
-  }
+.navigate > .ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-nav {
+  width: 100%;
+  display: flex;
+}
 
-  .navigate > .ivu-tabs-card > .ivu-tabs-content {
-      height: 100%;
-      margin-top: -16px;
-      background: url("./assets/naviBgImg.png") no-repeat;
-      background-size:100%;
-  }
+.navigate > .ivu-tabs-card > .ivu-tabs-content {
+  height: 100%;
+  margin-top: -16px;
+  background: url("./assets/naviBgImg.png") no-repeat;
+  background-size: 100%;
+}
 
-  .navigate > .ivu-tabs-card > .ivu-tabs-content > .ivu-tabs-tabpane {
-      padding: 16px;
-  }
+.navigate > .ivu-tabs-card > .ivu-tabs-content > .ivu-tabs-tabpane {
+  padding: 16px;
+}
 
-  .navigate > .ivu-tabs.ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab {
-      border-color: transparent;
-      flex-grow: 1;
-      background: url("./assets/tabBgImg.png") no-repeat;
-      background-size:100%;
-  }
+.navigate > .ivu-tabs.ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab {
+  border-color: transparent;
+  flex-grow: 1;
+  background: url("./assets/tabBgImg.png") no-repeat;
+  background-size: 100%;
+}
 
-  .navigate > .ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab-active {
-      border-color: #fff;
-      color: #FFF
-  }
+.navigate > .ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab-active {
+  border-color: #fff;
+  color: #fff;
+}
 </style>
