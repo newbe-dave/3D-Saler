@@ -6,14 +6,14 @@
           <a href="#" @click="login">登录</a> |
           <a href="#">注册</a> |
         </div>
-      </div> 
+      </div>
       <div class="container">
         <router-view/>
       </div>
       <div class="layout-ceiling">
         <div class="layout-ceiling-main">
         </div>
-      </div> 
+      </div>
     </div>
   </div>
 </template>
@@ -82,7 +82,7 @@ export default {
 .container {
   width: 960px;
   align-self: center;
-  background-image: url("./assets/bodyBgImg.png");
+  /*background-image: url("./assets/bodyBgImg.png");*/
   height: 100%;
   display: flex;
   justify-content: center;

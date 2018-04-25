@@ -19,6 +19,7 @@ Goods.belongsToMany(Order, {as: 'Order', through: 'goods_order'})
 
 DB.sync({force: true}).then(initDB).catch(err => {
     console.log('init failed')
+    console.log(err.message);
 });
 // DB.sync();
 
