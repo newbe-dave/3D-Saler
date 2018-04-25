@@ -8,33 +8,12 @@
         </div>
       </div> 
       <div class="container">
-        <div class="logo-container">
-          <div class="">
-            <div class="layout-header">
-              <div class="layout-logo">
-                  <img src="./assets/cgTowerLogo.png"/>
-              </div>
-            </div>
-            <div style="height: 100%">
-              <div class="navigate">
-                <Tabs type="card"  :animated="false">
-                    <Tab-pane label="模型下载"><my-download/></Tab-pane>
-                    <Tab-pane label="精品推荐"><my-recomend/></Tab-pane>
-                    <Tab-pane label="高清贴图"><my-resourceCntr/></Tab-pane>
-                    <Tab-pane label="教程学习">标签三的内容</Tab-pane>
-                    <Tab-pane label="软件下载">标签三的内容</Tab-pane>
-                    <Tab-pane label="我的账户"><my-account/></Tab-pane>
-                    <Tab-pane label="关于我们"><my-aboutus/></Tab-pane>
-                    <Tab-pane label="使用条款"><my-terms/></Tab-pane>
-                </Tabs>
-              </div>
-              <div class="layout-copy">
-                2017-2018 &copy; CGTower
-              </div>
-            </div>
-          </div>
-        </div>
+        <router-view/>
       </div>
+      <div class="layout-ceiling">
+        <div class="layout-ceiling-main">
+        </div>
+      </div> 
     </div>
   </div>
 </template>
@@ -58,7 +37,6 @@ export default {
             console.log(this);
             this.$http.defaults.headers.common["Authorization"] =
               "Bearer " + res.data.token;
-              console.log("bbb");
             // this.$Message.message({
             //   type: "success",
             //   message: "login successfully"
@@ -81,10 +59,10 @@ export default {
 
 <style scoped>
 .layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border: 1px solid #d7dde4;
-  position: relative;
-  border-radius: 4px;
-  overflow: hidden;
   height: 100%;
 }
 .layout-ceiling {
@@ -102,9 +80,10 @@ export default {
   color: #9ba7b5;
 }
 .container {
+  width: 960px;
+  align-self: center;
   background-image: url("./assets/bodyBgImg.png");
   height: 100%;
-  overflow: scroll;
   display: flex;
   justify-content: center;
 }
@@ -151,40 +130,5 @@ body {
   text-align: center;
   color: #2c3e50;
   height: 100%;
-}
-.navigate > .ivu-tabs-card {
-  height: 100%;
-}
-
-.navigate > .ivu-tabs-card > .ivu-tabs-bar {
-  border: none;
-}
-
-.navigate > .ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-nav {
-  width: 100%;
-  display: flex;
-}
-
-.navigate > .ivu-tabs-card > .ivu-tabs-content {
-  height: 100%;
-  margin-top: -16px;
-  background: url("./assets/naviBgImg.png") no-repeat;
-  background-size: 100%;
-}
-
-.navigate > .ivu-tabs-card > .ivu-tabs-content > .ivu-tabs-tabpane {
-  padding: 16px;
-}
-
-.navigate > .ivu-tabs.ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab {
-  border-color: transparent;
-  flex-grow: 1;
-  background: url("./assets/tabBgImg.png") no-repeat;
-  background-size: 100%;
-}
-
-.navigate > .ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab-active {
-  border-color: #fff;
-  color: #fff;
 }
 </style>

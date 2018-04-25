@@ -10,19 +10,9 @@ export default new Router({
   mode: 'history',
   base: __dirname,
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'Download',
-    //   component: Download
-    // },
     {
       path: '/',
       name: 'Recomend',
-      component: Recomend
-    },
-    {
-      path: '/hello',
-      name: 'HelloWorld',
       component: HelloWorld
     },
     {
