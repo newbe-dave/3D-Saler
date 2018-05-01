@@ -8,6 +8,7 @@
         </div>
       </div>
       <div class="container">
+        <Navigation></Navigation>
         <router-view/>
       </div>
       <div class="layout-ceiling">
@@ -85,7 +86,8 @@ export default {
   /*background-image: url("./assets/bodyBgImg.png");*/
   height: 100%;
   display: flex;
-  justify-content: center;
+  /*justify-content: center;*/
+  flex-direction: column;
 }
 .logo-container {
   height: 100%;

@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import _ from 'lodash'
 import App from './App'
+import Navigation from './components/Navigation.vue'
 import TabLogo from './components/TabLogo.vue'
 import DownloadTab from './components/DownloadTab.vue'
 import AccountTab from './components/AccountTab.vue'
@@ -22,6 +23,7 @@ import 'iview/dist/styles/iview.css'
 
 Vue.use(iView)
 // Vue.component('CGTable', CGTable)
+Vue.component('Navigation', Navigation)
 Vue.component('my-logo', TabLogo)
 Vue.component('my-download', DownloadTab)
 Vue.component('my-recomend', RecomendedTab)
