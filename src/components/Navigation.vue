@@ -2,14 +2,14 @@
   <Menu mode="horizontal" :theme="darkTheme" active-name="1" :on-select="show">
     <Submenu name="1">
       <template  slot="title">
-        <Icon type="ios-paper"></Icon>
+        <Icon type="ios-flame"></Icon>
         精品推荐
       </template>
       <MenuItem name="1-1">新增和启动</MenuItem>
     </Submenu>
     <Submenu name="2">
       <template  slot="title">
-        <Icon type="ios-people"></Icon>
+        <Icon type="images"></Icon>
         高清贴图
       </template>
       <Row class="navi-row">
@@ -44,7 +44,7 @@
       </MenuGroup>
     </Submenu>
     <MenuItem name="4">
-      <Icon type="settings"></Icon>
+      <Icon type="ios-download"></Icon>
       软件下载
     </MenuItem>
   </Menu>
