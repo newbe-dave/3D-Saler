@@ -2,14 +2,21 @@
   <div id="app">
     <div class="layout">
       <div class="layout-ceiling">
-        <div class="layout-ceiling-main">
+        <div class="layout-ceiling-logo">
+
+        </div>
+
+        <div class="layout-ceiling-navi">
+          <Navigation></Navigation>
+
+        </div>
+        <div class="layout-ceiling-login">
           <a href="#" @click="login">登录</a> |
           <a href="#">注册</a> |
         </div>
       </div>
       <div class="container">
-        <Navigation></Navigation>
-        <router-view/>
+        <!--<router-view/>-->
       </div>
       <div class="layout-ceiling">
         <div class="layout-ceiling-main">
@@ -63,19 +70,24 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid #d7dde4;
+  /*border: 1px solid #d7dde4;*/
   height: 100%;
 }
 .layout-ceiling {
-  background-image: url("./assets/headerBgImg.png");
-  padding: 6px 0;
-  height: 31px;
-  overflow: hidden;
-  margin: 0 0 0 0;
+  background: rgb(29, 29, 29);
+  display: flex;
+  justify-content: space-around;
 }
-.layout-ceiling-main {
-  float: right;
-  margin-right: 300px;
+.layout-ceiling-logo {
+
+}
+.layout-ceiling-navi {
+  flex-grow: 1;
+}
+.layout-ceiling-login {
+  display: flex;
+  justify-content: center;
+  /*margin-right: 300px;*/
 }
 .layout-ceiling-main a {
   color: #9ba7b5;
