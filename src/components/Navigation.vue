@@ -1,5 +1,5 @@
 <template>
-  <Menu mode="horizontal" :theme="darkTheme" active-name="1" :on-select="show">
+  <Menu mode="horizontal" :theme="theme" active-name="1" :on-select="show">
     <Submenu name="1">
       <template  slot="title">
         <Icon type="ios-flame"></Icon>
@@ -243,7 +243,7 @@
   export default {
     data () {
       return {
-        darkTheme: 'dark'
+        theme: 'dark'
       }
     },
     methods: {

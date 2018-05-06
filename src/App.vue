@@ -79,13 +79,14 @@ export default {
   justify-content: space-around;
 }
 .layout-ceiling-logo {
-
+  flex-grow: 1;
 }
 .layout-ceiling-navi {
   flex-grow: 1;
 }
 .layout-ceiling-login {
   display: flex;
+  flex-grow: 1;
   justify-content: center;
   /*margin-right: 300px;*/
 }
