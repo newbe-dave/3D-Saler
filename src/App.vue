@@ -6,7 +6,6 @@
           <Navigation></Navigation>
         </Header>
         <Content :style="{display: 'flex', justifyContent: 'center'}">
-          <!--<ContentList></ContentList>-->
           <router-view/>
         </Content>
         <Footer class="layout-footer-center">2011-2016 &copy; TalkingData</Footer>
