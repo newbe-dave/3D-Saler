@@ -1,5 +1,8 @@
 <template>
-  <Menu mode="horizontal" :theme="theme" active-name="1" :on-select="show">
+  <Menu class="cg-menu" mode="horizontal" :theme="theme" active-name="1" @on-select="show">
+    <div class="layout-logo">
+      <img src="../assets/logoSmall.png"/>
+    </div>
     <Submenu name="1">
       <template  slot="title">
         <Icon type="ios-flame"></Icon>
@@ -235,6 +238,10 @@
         </Col>
       </Row>
     </Submenu>
+    <div class="layout-login">
+      <a href="#" @click="login">登录</a> |
+      <a href="#">注册</a> |
+    </div>
   </Menu>
 
 </template>
@@ -247,6 +254,9 @@
       }
     },
     methods: {
+      show (name) {
+        alert(name)
+      }
     },
     mounted () {
       Event.$on('on-select', name => {
@@ -263,10 +273,31 @@
   .navi-row {
     width: 400px;
   }
+  .layout-logo{
+    width: 200px;
+    height: 60px;
+    float: left;
+    position: relative;
+    left: 20px;
+    display: flex;
+    /*flex-direction: column;*/
+    align-items: center;
+  }
+  .layout-logo img{
+
+  }
+  .layout-login{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center
+  }
 </style>
 
 <style>
   .navi-row .ivu-col .ivu-menu-item-group .ivu-menu-item {
     padding: 2px 0px;
+  }
+  .cg-menu.ivu-menu-dark {
+    /*background: none;*/
   }
 </style>
