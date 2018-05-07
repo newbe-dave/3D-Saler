@@ -6,7 +6,8 @@
           <Navigation></Navigation>
         </Header>
         <Content :style="{display: 'flex', justifyContent: 'center'}">
-          <ContentList></ContentList>
+          <!--<ContentList></ContentList>-->
+          <router-view/>
         </Content>
         <Footer class="layout-footer-center">2011-2016 &copy; TalkingData</Footer>
       </Layout>
@@ -15,8 +16,6 @@
 </template>
 
 <script>
-  import ContentList from './components/ContentList'
-
   export default {
     data () {
       return {
@@ -62,9 +61,6 @@
           });
       }
     },
-    components: {
-      ContentList
-    }
   };
 </script>
 

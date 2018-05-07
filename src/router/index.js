@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import Download from '../components/DownloadTab'
-import Recomend from '../components/RecomendedTab'
+import ContentList from '@/components/ContentList'
 
 Vue.use(Router)
 
@@ -12,7 +11,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Recomend',
+      name: 'content',
+      component: ContentList
+    },
+    {
+      path: '/hello',
+      name: 'hello',
       component: HelloWorld
     },
     {
