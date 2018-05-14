@@ -7,16 +7,24 @@
         <BreadcrumbItem>Layout</BreadcrumbItem>
       </Breadcrumb>
     </Layout>
+    <Layout>
+      <FilterRow/>
+    </Layout>
     <Card :style="{padding: '0 24px', minHeight: '900px', background: '#fff', maxWidth: '960px'}">
-      content
+
     </Card>
   </Layout>
 </template>
 
 <script>
-    export default {
-        name: "ContentList"
+  import FilterRow from './CgFilter'
+
+  export default {
+    name: "ContentList",
+    components: {
+      FilterRow
     }
+  }
 </script>
 
 <style scoped>
