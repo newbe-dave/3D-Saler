@@ -4,38 +4,14 @@ import Vue from 'vue'
 import _ from 'lodash'
 import App from './App'
 import Navigation from './components/Navigation.vue'
-import TabLogo from './components/TabLogo.vue'
-import DownloadTab from './components/DownloadTab.vue'
-import AccountTab from './components/AccountTab.vue'
-import AboutUsTab from './components/AboutUs.vue'
-import TermsTab from './components/Terms.vue'
-import InfosInAccountTab from './components/InfosInAccount.vue'
-import userInfoTab from './components/UserInfoOfInfos.vue'
-import RechargeCenterTab from './components/RechargeCenterOfInfos.vue'
-import DownloadRecTab from './components/DownloadRecord.vue'
-import FavouriteRecTab from './components/FavouriteRecord.vue'
-import RecomendedTab from './components/RecomendedTab.vue'
-import ResourceDisplayContainer from './components/ResourceDisplayContainer.vue'
 import router from './router'
 import Axios from 'axios'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
+import store from './store'
 
 Vue.use(iView)
-// Vue.component('CGTable', CGTable)
 Vue.component('Navigation', Navigation)
-Vue.component('my-logo', TabLogo)
-Vue.component('my-download', DownloadTab)
-Vue.component('my-recomend', RecomendedTab)
-Vue.component('my-account', AccountTab)
-Vue.component('my-aboutus', AboutUsTab)
-Vue.component('my-terms', TermsTab)
-Vue.component('my-infos', InfosInAccountTab)
-Vue.component('my-user', userInfoTab)
-Vue.component('my-recharge', RechargeCenterTab)
-Vue.component('my-downloadRec', DownloadRecTab)
-Vue.component('my-favouriteRec', FavouriteRecTab)
-Vue.component('my-resourceCntr', ResourceDisplayContainer)
 
 Vue.config.productionTip = false
 Vue.prototype.$http = Axios
@@ -45,5 +21,6 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
+  store,
   components: { App }
 })

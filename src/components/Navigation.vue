@@ -96,9 +96,9 @@
 </script>
 
 <style scoped>
-  .navi-row {
-    width: 400px;
-  }
+.cg-menu {
+  min-width: 500px;
+}
   .layout-logo{
     width: 200px;
     height: 60px;
@@ -116,14 +116,5 @@
     display: flex;
     /*flex-grow: 1;*/
     justify-content: center
-  }
-</style>
-
-<style>
-  .navi-row .ivu-col .ivu-menu-item-group .ivu-menu-item {
-    padding: 2px 0px;
-  }
-  .cg-menu.ivu-menu-dark {
-    /*background: none;*/
   }
 </style>

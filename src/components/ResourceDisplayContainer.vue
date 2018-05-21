@@ -27,6 +27,11 @@
 
 <script>
   export default {
+    props: [
+      'id',
+      'name',
+      'favouriteState'
+    ],
     data() {
       return {
         id: "12345",
@@ -53,7 +58,7 @@
     width: 182px;
     padding: 5px 5px 0 5px;
     height: 216px;
-    margin: 0 6px 2px;
+    margin: 0 1px 20px;
   }
 
   .image {

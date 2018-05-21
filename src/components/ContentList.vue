@@ -2,33 +2,60 @@
   <Layout :style="{'text-align': 'left', maxWidth: '960px', width: '960px'}">
     <Layout>
       <Breadcrumb :style="{margin: '88px 0 20px 20px', maxWidth: '960px'}">
-        <BreadcrumbItem>Home</BreadcrumbItem>
-        <BreadcrumbItem>Components</BreadcrumbItem>
-        <BreadcrumbItem>Layout</BreadcrumbItem>
+        <BreadcrumbItem>软装库</BreadcrumbItem>
+        <BreadcrumbItem>沙发</BreadcrumbItem>
+        <BreadcrumbItem>北京， 上海</BreadcrumbItem>
       </Breadcrumb>
     </Layout>
     <Layout>
       <FilterRow/>
     </Layout>
     <Card :style="{padding: '0', minHeight: '900px', background: '#fff', maxWidth: '960px'}">
-      <DisplayCard/>
+      <div class="show-sorted-list">
+        <Sorter/>
+      </div>
+      <div class="show-content-list">
+        <DisplayCard v-for="goods in lists" :id='goods.id' :name='goods.name' :favouriteState='goods.favouriteState'/>
+      </div>
     </Card>
   </Layout>
 </template>
 
 <script>
   import FilterRow from './CgFilter'
+  import Sorter from './CgSorter'
   import DisplayCard from './ResourceDisplayContainer'
 
   export default {
+    data() {
+      return {
+        lists: [{id: 1, name: "aaa", favouriteState: false},
+          {id: 2, name: 'bbb', favouriteState: false},
+          {id: 3, name: 'ccc', favouriteState: false},
+          {id: 4, name: 'ccc', favouriteState: false},
+          {id: 5, name: 'ccc', favouriteState: false},
+          {id: 6, name: 'ccc', favouriteState: false},
+          {id: 7, name: 'ccc', favouriteState: false},
+          {id: 8, name: 'ccc', favouriteState: false},
+        ]
+      }
+    },
     name: "ContentList",
     components: {
       FilterRow,
+      Sorter,
       DisplayCard
     }
   }
 </script>
 
 <style scoped>
-
+  .show-sorted-list {
+    margin-bottom: 20px;
+  }
+.show-content-list {
+  /*width: 960px;*/
+  display: flex;
+  flex-wrap: wrap;
+}
 </style>
