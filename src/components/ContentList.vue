@@ -10,19 +10,21 @@
     <Layout>
       <FilterRow/>
     </Layout>
-    <Card :style="{padding: '0 24px', minHeight: '900px', background: '#fff', maxWidth: '960px'}">
-
+    <Card :style="{padding: '0', minHeight: '900px', background: '#fff', maxWidth: '960px'}">
+      <DisplayCard/>
     </Card>
   </Layout>
 </template>
 
 <script>
   import FilterRow from './CgFilter'
+  import DisplayCard from './ResourceDisplayContainer'
 
   export default {
     name: "ContentList",
     components: {
-      FilterRow
+      FilterRow,
+      DisplayCard
     }
   }
 </script>
