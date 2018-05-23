@@ -2,9 +2,9 @@
   <Layout :style="{'text-align': 'left', maxWidth: '960px', width: '960px'}">
     <Layout>
       <Breadcrumb :style="{margin: '88px 0 20px 20px', maxWidth: '960px'}">
-        <BreadcrumbItem>软装库</BreadcrumbItem>
-        <BreadcrumbItem>沙发</BreadcrumbItem>
-        <BreadcrumbItem>北京， 上海</BreadcrumbItem>
+        <BreadcrumbItem v-for="path in paths">{{path}}</BreadcrumbItem>
+        <!--<BreadcrumbItem>沙发</BreadcrumbItem>-->
+        <!--<BreadcrumbItem>北京， 上海</BreadcrumbItem>-->
       </Breadcrumb>
     </Layout>
     <Layout>
@@ -25,6 +25,8 @@
   import FilterRow from './CgFilter'
   import Sorter from './CgSorter'
   import DisplayCard from './ResourceDisplayContainer'
+  import {mapState} from 'vuex'
+  import {mapGetters} from 'vuex'
 
   export default {
     data() {
@@ -40,6 +42,11 @@
         ]
       }
     },
+    computed: {
+      ...mapGetters({
+        paths: 'path'
+      })
+    },
     name: "ContentList",
     components: {
       FilterRow,
@@ -53,9 +60,10 @@
   .show-sorted-list {
     margin-bottom: 20px;
   }
-.show-content-list {
-  /*width: 960px;*/
-  display: flex;
-  flex-wrap: wrap;
-}
+
+  .show-content-list {
+    /*width: 960px;*/
+    display: flex;
+    flex-wrap: wrap;
+  }
 </style>
