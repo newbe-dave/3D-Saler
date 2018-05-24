@@ -34,9 +34,6 @@
     ],
     data() {
       return {
-        id: "12345",
-        name: "现代沙发",
-        favouriteState: false
       };
     },
     computed: {

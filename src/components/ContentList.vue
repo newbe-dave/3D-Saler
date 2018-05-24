@@ -3,12 +3,10 @@
     <Layout>
       <Breadcrumb :style="{margin: '88px 0 20px 20px', maxWidth: '960px'}">
         <BreadcrumbItem v-for="path in paths">{{path}}</BreadcrumbItem>
-        <!--<BreadcrumbItem>沙发</BreadcrumbItem>-->
-        <!--<BreadcrumbItem>北京， 上海</BreadcrumbItem>-->
       </Breadcrumb>
     </Layout>
     <Layout>
-      <FilterRow/>
+      <FilterRow :filterConfig=filterConfig />
     </Layout>
     <Card :style="{padding: '0', minHeight: '900px', background: '#fff', maxWidth: '960px'}">
       <div class="show-sorted-list">
@@ -44,7 +42,10 @@
     },
     computed: {
       ...mapGetters({
-        paths: 'path'
+        paths: 'path',
+      }),
+      ...mapState({
+        filterConfig: state => state.cgFilter.filters.navi1
       })
     },
     name: "ContentList",

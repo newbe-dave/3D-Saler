@@ -1,48 +1,48 @@
 <template>
   <div class="show-sorted-list">
     <Layout>
-      <Layout>
-        <Sider>{{fieldLabel}}:</Sider>
+      <Layout v-for="(item, index) in filterConfig">
+        <Sider>{{item.fieldLabel}}:</Sider>
         <Content>
-          <RadioGroup v-model="button6" type="button" size="small">
-            <Radio label="北京"></Radio>
-            <Radio label="上海"></Radio>
-            <Radio label="深圳"></Radio>
-            <Radio label="杭州"></Radio>
+          <RadioGroup v-model="buttons[index]" type="button" size="small" value="全部">
+            <Radio v-for="selection in item.fields" :label=selection></Radio>
           </RadioGroup>
         </Content>
         <Footer></Footer>
       </Layout>
 
-      <Layout>
-        <Sider>{{fieldLabel}}:</Sider>
+      <!--<Layout>-->
+        <!--<Sider>{{fieldLabel}}:</Sider>-->
 
-        <Content>
-          <RadioGroup v-model="button" type="button" size="small">
-            <Radio label="北京"></Radio>
-            <Radio label="上海"></Radio>
-            <Radio label="深圳"></Radio>
-            <Radio label="杭州"></Radio>
-          </RadioGroup>
-        </Content>
-        <Footer></Footer>
-      </Layout>
+        <!--<Content>-->
+          <!--<RadioGroup v-model="button" type="button" size="small">-->
+            <!--<Radio label="北京"></Radio>-->
+            <!--<Radio label="上海"></Radio>-->
+            <!--<Radio label="深圳"></Radio>-->
+            <!--<Radio label="杭州"></Radio>-->
+          <!--</RadioGroup>-->
+        <!--</Content>-->
+        <!--<Footer></Footer>-->
+      <!--</Layout>-->
 
     </Layout>
   </div>
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
+
   export default {
-    // props: {
-    //
-    // },
+    props: [
+      'filterConfig'
+    ],
     data() {
       return {
-        fieldLabel: 'city',
-        button6: '北京',
-        button: '上海'
+        buttons: ['button1', 'button2', 'button3']
       }
+    },
+    methods: {
+
     }
   }
 </script>
