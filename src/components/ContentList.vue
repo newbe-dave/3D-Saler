@@ -44,9 +44,12 @@
       ...mapGetters({
         paths: 'path',
       }),
-      ...mapState({
-        filterConfig: state => state.cgFilter.filters.navi1
-      })
+      ...mapGetters({
+        filterConfig: 'getFilter'
+      }),
+      // ...mapState({
+      //   filterConfig: state => state.cgFilter.filters.navi1
+      // })
     },
     name: "ContentList",
     components: {

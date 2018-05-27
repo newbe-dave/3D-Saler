@@ -1,13 +1,25 @@
+import _ from 'lodash'
+import config from '../config/naviMap'
+
 const state = {
-  pathStack: ['软装库', '沙发']
+  pathStack: []
 }
 
 const getters = {
-  path: state => state.pathStack
+  path: (state, getters, rootState) => {
+    state.pathStack = _.map(rootState.selectedNavigation.split('-'), (str) => config.mapping[str]);
+
+    if (rootState.detailModelName) {
+      state.pathStack.concat(rootState.detailModelName);
+    }
+    return state.pathStack
+  }
 }
 
 const mutations = {
-  setPath: (state, newPath) => {state.pathStack = newPath}
+  setPath: (state, newPath) => {
+    state.pathStack = newPath
+  }
 }
 
 const actions = {}

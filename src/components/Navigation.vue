@@ -1,5 +1,5 @@
 <template>
-  <Menu class="cg-menu" mode="horizontal" :theme="theme" active-name="1" @on-select="show">
+  <Menu class="cg-menu" mode="horizontal" :theme="theme" active-name="1" @on-select="updateSeclected">
     <div class="layout-logo">
       <img src="../assets/logoSmall.png"/>
     </div>
@@ -72,6 +72,7 @@
 
 </template>
 <script>
+  import {mapActions} from 'vuex'
 
   export default {
     data () {
@@ -80,16 +81,19 @@
       }
     },
     methods: {
+      ...mapActions({
+        updateSeclected: 'setSelectedItem'
+      }),
       show (name) {
         alert(name)
       }
     },
-    mounted () {
-      Event.$on('on-select', name => {
-        console.log(name);
-        alert(name);
-      })
-    },
+    // mounted () {
+    //   Event.$on('on-select', name => {
+    //     console.log(name);
+    //     alert(name);
+    //   })
+    // },
     components: {
     }
   }

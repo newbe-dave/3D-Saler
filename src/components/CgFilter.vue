@@ -4,27 +4,12 @@
       <Layout v-for="(item, index) in filterConfig">
         <Sider>{{item.fieldLabel}}:</Sider>
         <Content>
-          <RadioGroup v-model="buttons[index]" type="button" size="small" value="全部">
+          <RadioGroup v-model="buttons[index]" type="button" size="small">
             <Radio v-for="selection in item.fields" :label=selection></Radio>
           </RadioGroup>
         </Content>
         <Footer></Footer>
       </Layout>
-
-      <!--<Layout>-->
-        <!--<Sider>{{fieldLabel}}:</Sider>-->
-
-        <!--<Content>-->
-          <!--<RadioGroup v-model="button" type="button" size="small">-->
-            <!--<Radio label="北京"></Radio>-->
-            <!--<Radio label="上海"></Radio>-->
-            <!--<Radio label="深圳"></Radio>-->
-            <!--<Radio label="杭州"></Radio>-->
-          <!--</RadioGroup>-->
-        <!--</Content>-->
-        <!--<Footer></Footer>-->
-      <!--</Layout>-->
-
     </Layout>
   </div>
 </template>

@@ -15,6 +15,7 @@ Vue.component('Navigation', Navigation)
 
 Vue.config.productionTip = false
 Vue.prototype.$http = Axios
+Object.defineProperty(Vue.prototype, '_', { value: _ });
 
 /* eslint-disable no-new */
 new Vue({
