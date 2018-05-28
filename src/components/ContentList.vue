@@ -9,11 +9,21 @@
       <FilterRow :filterConfig=filterConfig />
     </Layout>
     <Card :style="{padding: '0', minHeight: '900px', background: '#fff', maxWidth: '960px'}">
-      <div class="show-sorted-list">
-        <Sorter/>
-      </div>
-      <div class="show-content-list">
-        <DisplayCard v-for="goods in lists" :id='goods.id' :name='goods.name' :favouriteState='goods.favouriteState'/>
+      <div class="show-goods-container">
+        <div class="show-sorted-list">
+          <Sorter/>
+        </div>
+        <div class="show-content-list">
+          <DisplayCard v-for="goods in lists" :id='goods.id' :name='goods.name' :favouriteState='goods.favouriteState'/>
+          <!--<div v-for="goods in lists" class="show-content-list">-->
+
+
+            <!--<DisplayCard  :id='goods.id' :name='goods.name' :favouriteState='goods.favouriteState'/>-->
+          <!--</div>-->
+        </div>
+        <div class="show-page">
+          <Page :total="100" show-elevator></Page>
+        </div>
       </div>
     </Card>
   </Layout>
@@ -61,13 +71,25 @@
 </script>
 
 <style scoped>
+  .show-goods-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*height: 900px;*/
+  }
+
   .show-sorted-list {
     margin-bottom: 20px;
   }
 
   .show-content-list {
-    /*width: 960px;*/
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
+    flex-grow: 1;
+    float: left;
+  }
+  .show-page {
+    align-self: center;
   }
 </style>

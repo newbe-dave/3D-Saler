@@ -8,7 +8,17 @@
         <Content :style="{display: 'flex', justifyContent: 'center'}">
           <router-view/>
         </Content>
-        <Footer class="layout-footer-center">2011-2016 &copy; TalkingData</Footer>
+        <Footer class="layout-footer-center">
+          <div>
+            <span><a href="">关于我们</a></span>
+            <span><a href="">联系我们</a></span>
+            <span><a href="">版权声明</a></span>
+            <span><a href="">帮助中心</a></span>
+          </div>
+          <p>CGTOWER--专注提供3D模型下载，原创3D模型下载的室内设计3D模型下载网站</p>
+          <p>沪ICP备XXXXX 版权所有上海婺宸网络科技股份有限公司，禁止用于商业用途，违法必究</p>
+          <p>2011-2016 &copy; CgTower</p>
+        </Footer>
       </Layout>
     </div>
   </div>
@@ -72,6 +82,7 @@
     overflow: hidden;
   }
   .layout-footer-center{
+    margin-top: 20px;
     text-align: center;
   }
   .layout-content{
