@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 const state = {
     filters: {
       'softDecoration': [{
@@ -38,7 +40,8 @@ const state = {
         fieldLabel: "细分", fields:
           ['全部', '建模', '材质', '渲染', '后期']
       }],
-    }
+    },
+  currentSelectedSubMenu: {}
   }
 ;
 
@@ -47,11 +50,21 @@ const getters = {
     var firstLvlNavigation = rootState.selectedNavigation.split('-')[0];
     return state.filters[firstLvlNavigation]
   },
+  getSelection
 };
 
-const mutations = {};
+const mutations = {
+  setCurrentSelectedMenu: (state, selection) => {
+    _.assign(state.currentSelectedSubMenu, selection);
+  }
+};
 
-const actions = {};
+const actions = {
+  afterFilterSelected: ({commit}, selection) => {
+    console.log(selection);
+    commit('setCurrentSelectedSubMenu', selection);
+  }
+};
 
 export default {
   state,

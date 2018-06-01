@@ -1,5 +1,5 @@
 <template>
-  <Menu class="cg-menu" mode="horizontal" :theme="theme" active-name="1" @on-select="updateSeclected">
+  <Menu class="cg-menu" mode="horizontal" :theme="theme" active-name="1" @on-select="updateSelected">
     <div class="layout-logo">
       <img src="../assets/logoSmall.png"/>
     </div>
@@ -81,12 +81,13 @@
       }
     },
     methods: {
+      // updateSelected: function (name) {
+      //   this.$emit('afterSelectMenu', name);
+      //   this.$store.dispatch('setSelectedItem', name);
+      // },
       ...mapActions({
-        updateSeclected: 'setSelectedItem'
-      }),
-      show (name) {
-        alert(name)
-      }
+        updateSelected: 'afterSelectedItem'
+      })
     },
     // mounted () {
     //   Event.$on('on-select', name => {

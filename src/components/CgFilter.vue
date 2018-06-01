@@ -4,7 +4,7 @@
       <Layout v-for="(item, index) in filterConfig">
         <Sider>{{item.fieldLabel}}:</Sider>
         <Content>
-          <RadioGroup v-model="buttons[index]" type="button" size="small">
+          <RadioGroup v-model="buttons[index]" type="button" size="small" @on-change="afterChangeSubMenu">
             <Radio v-for="selection in item.fields" :label=selection></Radio>
           </RadioGroup>
         </Content>
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-  import {mapGetters} from 'vuex'
+  import {mapGetters, mapActions} from 'vuex'
 
   export default {
     props: [
@@ -27,7 +27,22 @@
       }
     },
     methods: {
-
+      afterChangeSubMenu: function (selection) {
+        //TODO some problem
+        return function (selected) {
+          console.log(this);
+          let payload = {};
+          payload[selection] = selected;
+          alert(payload);
+          this.$store.dispatch('afterFilterSelected', payload);
+        }.call(this, selection);
+      },
+      show: function (name) {
+        alert(name);
+      }
+      // ...mapActions({
+      //   afterChangeSubMenu: ''
+      // })
     }
   }
 </script>
