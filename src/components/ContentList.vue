@@ -17,7 +17,7 @@
           <DisplayCard v-for="goods in goodsList" :id='goods.id' :name='goods.name' :favouriteState='goods.favouriteState'/>
         </div>
         <div class="show-page">
-          <Page :total="100" show-elevator></Page>
+          <Page :total="20" show-elevator @on-change="changePage"></Page>
         </div>
       </div>
     </Card>
@@ -34,15 +34,7 @@
   export default {
     data() {
       return {
-        // defaultLists: [{id: 1, name: "aaa", favouriteState: false},
-        //   {id: 2, name: 'bbb', favouriteState: false},
-        //   {id: 3, name: 'ccc1', favouriteState: false},
-        //   {id: 4, name: 'ccc2', favouriteState: false},
-        //   {id: 5, name: 'ccc3', favouriteState: false},
-        //   {id: 6, name: 'ccc4', favouriteState: false},
-        //   {id: 7, name: 'ccc5', favouriteState: false},
-        //   {id: 8, name: 'ccc6', favouriteState: false},
-        // ]
+
       }
     },
     computed: {
@@ -50,21 +42,11 @@
         paths: 'path',
         filterConfig: 'getFilter',
         goodsList: 'getGoodsList'
-      }),
-      // ...mapGetters({
-      //   filterConfig: 'getFilter'
-      // }),
-
-      // ...mapState({
-      //   filterConfig: state => state.cgFilter.filters.navi1
-      // })
+      })
     },
     methods: {
-      getItems4MenuSelection: function() {
-
-      },
-      getItems4SubMenuSelection: function () {
-
+      changePage: function (page) {
+        this.$store.dispatch('searchPageData', page);
       }
     },
     name: "ContentList",

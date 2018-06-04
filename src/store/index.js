@@ -4,6 +4,7 @@ import breadCrumb from './modules/breadCrumb.js'
 import cgFilter from './modules/cgFilter'
 import navigation from './modules/navigation'
 import goodsList from './modules/goods'
+import pages from './modules/pages'
 
 Vue.use(Vuex);
 
@@ -31,7 +32,8 @@ export default new Vuex.Store({
     breadCrumb,
     cgFilter,
     navigation,
-    goodsList
+    goodsList,
+    pages
   },
   state,
   mutations,
