@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import ContentList from '@/components/ContentList'
+import LogIn from '@/components/LogIn'
+import Register from '@/components/Register'
 
 Vue.use(Router)
 
@@ -15,9 +16,14 @@ export default new Router({
       component: ContentList
     },
     {
-      path: '/hello',
-      name: 'hello',
-      component: HelloWorld
+      path: '/login',
+      name: 'login',
+      component: LogIn
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
     },
     {
       path: '*',
