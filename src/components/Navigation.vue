@@ -65,8 +65,8 @@
       <MenuItem name="tutorial-audio">音频编辑</MenuItem>
     </Submenu>
     <div class="layout-login">
-      <a href="#" @click="login">登录</a> |
-      <a href="#">注册</a> |
+      <a href="/login" @click="login">登录</a> |
+      <a href="/register">注册</a> |
     </div>
   </Menu>
 

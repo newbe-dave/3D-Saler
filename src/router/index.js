@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import ContentList from '@/components/ContentList'
 import LogIn from '@/components/LogIn'
 import Register from '@/components/Register'
+import Findback from '@/components/FindBack'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/register',
       name: 'register',
       component: Register
+    },
+    {
+      path: '/findback',
+      name: 'findback',
+      component: Findback
     },
     {
       path: '*',
